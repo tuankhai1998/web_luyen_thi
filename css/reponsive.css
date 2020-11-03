@@ -1,0 +1,16 @@
+@media screen and (max-width: 600px) {
+    .study .study-banner {
+        flex-direction: column;
+        height: auto;
+    }
+    .study .study-banner .study-banner--1 {
+        clip-path: polygon(0% 0%, 100% 0, 100% 80%, 50% 100%, 0 80%);
+    }
+    .study .study-banner .study-banner--3 {
+        clip-path: polygon(100% 0, 100% 100%, 0% 100%, 0 0, 50% 20%);
+    }
+    .study .study-banner .study-banner--1 p, .study .study-banner .study-banner--3 p {
+        width: 100%;
+        padding-left: 0;
+    }
+}
