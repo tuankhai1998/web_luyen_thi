@@ -364,7 +364,7 @@
 
 /*--------------study and new list ----------------*/
 
-.study-rightTitle, .news-leftTitle, .news-rightTitle {
+.study-rightTitle, .news-leftTitle, .news-rightTitle, .class-sectionTitle {
     clip-path: polygon(100% 0, 100% 100%, 0% 100%, 5% 50%, 0% 0%);
     background-color: var(--orange-soda);
     color: var(--white);
@@ -374,7 +374,7 @@
     font-size: 1.2rem;
 }
 
-.study-listChemistry, .news-list {
+.study-listChemistry, .news-list, .test-list {
     height: 200px;
     padding: 10px;
     margin-top: 10px;
@@ -382,7 +382,7 @@
     box-shadow: 1px 0px 10px -1px #000000;
 }
 
-.study-chemistryItem, .news-listItem {
+.study-chemistryItem, .news-listItem, .test-listItem {
     display: flex;
     position: relative;
     z-index: 1;
@@ -393,7 +393,7 @@
     margin-bottom: 1rem;
 }
 
-.study-chemistryItem::after, .news-listItem::after {
+.study-chemistryItem::after, .news-listItem::after, .test-listItem::after {
     content: "";
     position: absolute;
     transition: 1s ease-in-out;
@@ -406,20 +406,20 @@
     clip-path: polygon(0% 0%, 85% 0%, 100% 50%, 85% 100%, 0% 100%);
 }
 
-.study-chemistryItem:hover, .news-listItem:hover {
+.study-chemistryItem:hover, .news-listItem:hover, .test-listItem:hover {
     color: var(--white);
 }
 
-.study-chemistryItem:hover::after, .news-listItem:hover::after {
+.study-chemistryItem:hover::after, .news-listItem:hover::after, .test-listItem:hover::after {
     width: calc(200% + 10px);
 }
 
-.study-chemistryItem .content, .news-listItem .content {
+.study-chemistryItem .content, .news-listItem .content, .test-listItem .content {
     flex: 2;
     margin-left: 10px;
 }
 
-.study-chemistryItem .content .description, .news-listItem .content .description {
+.study-chemistryItem .content .description, .news-listItem .content .description, .test-listItem .content .description {
     width: 100%;
     height: calc(1.4*5*13px);
     -webkit-line-clamp: 5;
@@ -668,4 +668,162 @@
     text-transform: uppercase;
     font-weight: bold;
     color: var(--white);
+}
+
+/*------------------------------class----------------------------*/
+
+.class-banner {
+    background-image: url("../images/student1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.class-banner::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0.3;
+    z-index: 0;
+}
+
+.class-banner .title {
+    font-size: 4rem;
+    color: #ff9b42;
+    z-index: 1;
+    text-transform: uppercase;
+}
+
+/*----------------------list subject----------------------*/
+
+.class-content {
+    margin: 20px 0;
+}
+
+.list-subject {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: auto auto auto auto;
+    padding: 1rem 0;
+}
+
+.subject-item {
+    height: 200px;
+    background-color: var(--primary-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+    position: relative;
+    overflow: hidden;
+}
+
+.subject-item img {
+    position: absolute;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    transition: 1s ease-in-out;
+}
+
+.subject-item:hover img {
+    transform: scale(1.1) translate(-50%, -50%);
+}
+
+.subject-item p {
+    z-index: 1;
+}
+
+.test-list {
+    height: 500px;
+}
+
+.test-list .test-listItem {
+    max-height: 150px;
+}
+
+.test-list .test-listItem .title {
+    font-size: 1.3rem;
+}
+
+.test-list .test-listItem .description {
+    font-size: 1rem;
+    color: var(--quick-silver);
+    transition: 1s ease-in-out;
+}
+
+.test-list .test-listItem:hover .description {
+    font-size: 1rem;
+    color: var(--white);
+}
+
+.sidebar-content {
+    font-size: 1rem;
+}
+
+.sidebar-content ul {
+    margin: 10px 0;
+    margin-left: 20px;
+}
+
+.sidebar-content ul li {
+    padding: 10px;
+    list-style-type: none;
+}
+
+.sidebar-content ul li::before {}
+
+.sidebar-content ul li a {
+    transition: 0.5s ease-in-out;
+}
+
+.sidebar-content ul li a:hover {
+    color: var(--orange-soda);
+}
+
+/*-------------------Subject knowledge-----------------*/
+
+.list-knowledge {
+    box-shadow: 1px 0px 3px 1px rgba(0, 0, 0, 0.5);
+    height: 500px;
+    padding: 1rem;
+    margin: 1rem 0;
+    overflow-y: auto;
+}
+
+.knowledge-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    font-size: 1rem;
+    min-height: 50px;
+    background-color: var(--lavender-web);
+    border-radius: 4px;
+}
+
+.knowledge-item p {
+    margin: 0;
+    color: var(--orange-soda);
+}
+
+.knowledge-item a {
+    padding: 10px 15px;
+    background-color: var(--orange-soda);
+    border-radius: 4px;
+    color: var(--white)
 }
